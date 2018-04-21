@@ -4,7 +4,7 @@ import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
-public class Postman extends AbstractQueue implements QueueImpl {
+public class Postman extends Queue implements QueueImpl {
     private String queueName;
 
     public Postman(Connection connection, String queueName) {

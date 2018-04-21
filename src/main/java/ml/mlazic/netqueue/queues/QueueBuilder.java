@@ -78,6 +78,8 @@ public class QueueBuilder {
                 return new Postman(connection, queueName);
             case FANOUT:
                 return new Fanout(connection, exchangeName);
+            case WORK:
+                return new Work(connection, queueName);
                 default:
                     return new Postman(connection, queueName);
         }

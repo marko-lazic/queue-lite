@@ -6,12 +6,11 @@ import com.rabbitmq.client.Connection;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-abstract class AbstractQueue {
+abstract class Queue {
     protected Channel channel;
     protected final Connection connection;
 
-
-    protected AbstractQueue(Connection connection) {
+    protected Queue(Connection connection) {
         this.connection = connection;
         open();
     }

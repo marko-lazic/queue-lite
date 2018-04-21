@@ -4,7 +4,7 @@ import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
-public class Fanout extends AbstractQueue implements QueueImpl {
+public class Fanout extends Queue implements QueueImpl {
     private String exchangeName;
 
     protected Fanout(Connection connection, String exchangeName) {
