@@ -1,10 +1,7 @@
-package ml.mlazic.netqueue.builders;
+package ml.mlazic.netqueue.queues;
 
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import ml.mlazic.netqueue.queues.Postman;
-import ml.mlazic.netqueue.queues.QueueImpl;
-import ml.mlazic.netqueue.queues.QueueType;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
@@ -79,6 +76,8 @@ public class QueueBuilder {
         switch (type) {
             case POSTMAN:
                 return new Postman(connection, queueName);
+            case FANOUT:
+                return new Fanout(connection, exchangeName);
                 default:
                     return new Postman(connection, queueName);
         }

@@ -3,17 +3,13 @@ package ml.mlazic.netqueue.queues;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
-public class Postman implements QueueImpl {
-    private Channel channel;
-    private String  queueName;
-    private final Connection connection;
+public class Postman extends AbstractQueue implements QueueImpl {
+    private String queueName;
 
     public Postman(Connection connection, String queueName) {
+        super(connection);
         this.queueName = queueName;
-        this.connection = connection;
-        open();
     }
 
     public Object send(Object in) {
@@ -24,15 +20,12 @@ public class Postman implements QueueImpl {
             e.printStackTrace();
             return -1;
         }
-        //return " [x] Sent '" + in.toString() + "'";
         return in;
     }
 
     public Object receive() {
         try {
             channel.queueDeclare(queueName, false, false, false, null);
-
-            //System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
             Consumer consumer = new DefaultConsumer(channel) {
                 @Override
@@ -51,22 +44,5 @@ public class Postman implements QueueImpl {
         }
     }
 
-    public void open() {
-        try {
-            this.channel = connection.createChannel();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void close() {
-        try {
-            channel.close();
-            connection.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -1,7 +1,7 @@
 package ml.mlazic.netqueue.examples;
 
-import ml.mlazic.netqueue.queues.Queue;
-import ml.mlazic.netqueue.builders.QueueBuilder;
+import ml.mlazic.netqueue.queues.NetQueue;
+import ml.mlazic.netqueue.queues.QueueBuilder;
 import ml.mlazic.netqueue.queues.QueueType;
 
 public class PostmanSender {
@@ -16,9 +16,11 @@ public class PostmanSender {
                 .setQueueName("postman.queue")
                 .setType(QueueType.POSTMAN);
 
-        Queue queue = new Queue(builder);
+        NetQueue queue = new NetQueue(builder);
 
-        queue.send(new String("hello world"));
+        queue.send(new String("Hello Postman 1!"));
+        queue.send(new String("Hello Postman 2!"));
+        queue.send(new String("Hello Postman 3!"));
 
         queue.close();
     }

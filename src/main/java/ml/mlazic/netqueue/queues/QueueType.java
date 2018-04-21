@@ -1,5 +1,5 @@
 package ml.mlazic.netqueue.queues;
 
 public enum QueueType {
-    POSTMAN, WORK, FANOUT, SUBSCRIBE
+    POSTMAN, WORK, FANOUT
 }

@@ -1,7 +1,7 @@
 package ml.mlazic.netqueue.examples;
 
-import ml.mlazic.netqueue.queues.Queue;
-import ml.mlazic.netqueue.builders.QueueBuilder;
+import ml.mlazic.netqueue.queues.NetQueue;
+import ml.mlazic.netqueue.queues.QueueBuilder;
 import ml.mlazic.netqueue.queues.QueueType;
 
 public class PostmanReceiver {
@@ -16,9 +16,9 @@ public class PostmanReceiver {
                 .setQueueName("postman.queue")
                 .setType(QueueType.POSTMAN);
 
-        Queue queue = new Queue(builder);
+        NetQueue queue = new NetQueue(builder);
 
-        System.out.println(queue.receive());
+        queue.receive();
 
         queue.close();
 
