@@ -1,11 +1,9 @@
-package ml.mlazic.queuelite;
+package ml.mlazic.netqueue.old;
 
-import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
-import java.util.Queue;
 import java.util.concurrent.TimeoutException;
 
 public class QueueLite {
@@ -64,13 +62,39 @@ close (the connection
 
     public void send(String message) {
         openConnection();
-        Sender sender = new Sender(connection, QUEUE_NAME);
+        Sender sender = new Sender(connection);
         sender.send(message);
+    }
+
+    public void send(String message, String type) {
+        openConnection();
+        Sender sender = new Sender(connection);
+        if (type == "fanout")
+            sender.sendFanout(message);
+        else
+            sender.send(message);
     }
 
     public void receive() {
         openConnection();
-        Receiver receiver = new Receiver(connection, QUEUE_NAME);
+        Receiver receiver = new Receiver(connection);
         receiver.recieve();
+    }
+
+    public void receive(String type) {
+        openConnection();
+        Receiver receiver = new Receiver(connection);
+        if (type == "fanout")
+            receiver.recieveFanout();
+        else
+            receiver.recieve();
+    }
+
+    public void close() {
+        try {
+            connection.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,4 +1,4 @@
-package ml.mlazic.queuelite;
+package ml.mlazic.netqueue.old;
 
 public class AmqpClient {
 
@@ -12,6 +12,10 @@ public class AmqpClient {
         queueLite.send("hello world2");
         queueLite.send("hello world3");
 
-        queueLite.receive();
+        queueLite.send("hello Fans1", "fanout");
+        queueLite.send("hello Fans2", "fanout");
+        queueLite.send("hello Fans3", "fanout");
+
+
     }
 }
