@@ -9,8 +9,7 @@ public class WorkSender {
     public static void main(String[] args) {
 
         QueueBuilder builder = new QueueBuilder();
-        builder
-                .setQueueName("hello")
+        builder.setQueueName("hello.work")
                 .setType(QueueType.WORK);
 
         NetQueue queue = new NetQueue(builder);

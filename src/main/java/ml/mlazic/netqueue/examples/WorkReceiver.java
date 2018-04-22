@@ -1,5 +1,6 @@
 package ml.mlazic.netqueue.examples;
 
+import ml.mlazic.netqueue.queues.Message;
 import ml.mlazic.netqueue.queues.NetQueue;
 import ml.mlazic.netqueue.queues.QueueBuilder;
 import ml.mlazic.netqueue.queues.QueueType;
@@ -9,16 +10,24 @@ public class WorkReceiver {
     public static void main(String[] args) {
 
         QueueBuilder builder = new QueueBuilder();
-        builder
-                .setQueueName("hello")
-                .setType(QueueType.WORK);
+        builder.setQueueName("hello.work")
+                .setType(QueueType.WORK)
+                .handeMessage((message) -> { doWork(message.toString()); });
 
         NetQueue queue = new NetQueue(builder);
 
         queue.receive();
-
-        //queue.close();
-
     }
 
+    private static void doWork(String task) {
+        System.out.println(" [x] Received '" + task + "'");
+        for (char c : task.toCharArray()) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(" [x] Done");
+    }
 }

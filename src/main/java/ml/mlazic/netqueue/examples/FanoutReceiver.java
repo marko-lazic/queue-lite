@@ -9,9 +9,9 @@ public class FanoutReceiver {
     public static void main(String[] args) {
 
         QueueBuilder builder = new QueueBuilder();
-        builder
-                .setExchaneName("fanout")
-                .setType(QueueType.FANOUT);
+        builder.setExchaneName("fanout")
+                .setType(QueueType.FANOUT)
+                .handeMessage((message) -> { System.out.println(" [x] Received '" + message + "'"); });
 
         NetQueue queue = new NetQueue(builder);
 
