@@ -24,7 +24,7 @@ public class Work extends BasicQueue {
      * @param connection the socket connection
      * @param queueName the name of the queue.
      */
-    protected Work(Connection connection, Message messageHandler, String queueName) {
+    public Work(Connection connection, Message messageHandler, String queueName) {
         super(connection, messageHandler);
         this.queueName = queueName;
     }

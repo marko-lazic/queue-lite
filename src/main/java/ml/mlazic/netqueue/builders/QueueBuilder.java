@@ -1,7 +1,8 @@
-package ml.mlazic.netqueue.queues;
+package ml.mlazic.netqueue.builders;
 
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import ml.mlazic.netqueue.queues.*;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;

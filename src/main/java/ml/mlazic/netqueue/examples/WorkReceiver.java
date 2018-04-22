@@ -1,8 +1,7 @@
 package ml.mlazic.netqueue.examples;
 
-import ml.mlazic.netqueue.queues.Message;
-import ml.mlazic.netqueue.queues.NetQueue;
-import ml.mlazic.netqueue.queues.QueueBuilder;
+import ml.mlazic.netqueue.NetQueue;
+import ml.mlazic.netqueue.builders.QueueBuilder;
 import ml.mlazic.netqueue.queues.QueueType;
 
 public class WorkReceiver {

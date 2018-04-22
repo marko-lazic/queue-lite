@@ -1,4 +1,8 @@
-package ml.mlazic.netqueue.queues;
+package ml.mlazic.netqueue;
+
+import com.rabbitmq.client.Connection;
+import ml.mlazic.netqueue.builders.QueueBuilder;
+import ml.mlazic.netqueue.queues.Queue;
 
 /**
  * NetQueue.java
@@ -18,7 +22,6 @@ public class NetQueue {
     public NetQueue(QueueBuilder builder) {
         imp = builder.buildQueue();
     }
-
 
     /**
      * Instates default builder settings for the connection and queue type.
@@ -51,4 +54,8 @@ public class NetQueue {
         imp.close();
     }
 
+    /** @return BasicQueue object connection handle. */
+    public Connection getConnection() {
+        return imp.getConnection();
+    }
 }

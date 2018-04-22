@@ -1,5 +1,7 @@
 package ml.mlazic.netqueue.queues;
 
+import com.rabbitmq.client.Connection;
+
 /**
  * Queue.java
  * Purpose: Main API interface.
@@ -29,4 +31,7 @@ public interface Queue {
 
     /** Ends the session and closes the connection. */
     void close();
+
+    /** gets RabbitMQ connection handle. */
+    Connection getConnection();
 }

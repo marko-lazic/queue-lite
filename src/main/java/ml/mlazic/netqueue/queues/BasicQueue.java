@@ -58,4 +58,10 @@ abstract class BasicQueue implements Queue {
             e.printStackTrace();
         }
     }
+
+    /** @return RabbitMQ connection. */
+    @Override
+    public Connection getConnection() {
+        return this.connection;
+    }
 }
