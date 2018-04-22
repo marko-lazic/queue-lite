@@ -50,8 +50,13 @@ QueueBuilder builder = new QueueBuilder();
 
 ```
 QueueBuilder builder = new QueueBuilder();
-        builder.setQueueName("postman.queue")
-                .setType(QueueType.POSTMAN);
+        builder.setHost("localhost")
+                .setPort(5672)
+                .setUsername("guest")
+                .setPassword("guest")
+                .setQueueName("postman.queue")
+                .setType(QueueType.POSTMAN)
+                .handeMessage((message) -> { System.out.println(" [x] Received '" + message + "'"); });
 
         NetQueue queue = new NetQueue(builder);
 
