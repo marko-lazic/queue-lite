@@ -53,7 +53,7 @@ public class QueueBuilder {
 
     /**
      * @param type sets default type.
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder setType(QueueType type) {
         this.type = type;
@@ -62,7 +62,7 @@ public class QueueBuilder {
 
     /**
      * @param queueName the default queue name.
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder setQueueName(String queueName) {
         this.queueName = queueName;
@@ -71,7 +71,7 @@ public class QueueBuilder {
 
     /**
      * @param exchaneName the default exchange name.
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder setExchaneName(String exchaneName) {
         this.exchangeName = exchaneName;
@@ -80,7 +80,7 @@ public class QueueBuilder {
 
     /**
      * @param hostname the default host to use for connections
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder setHost(String hostname) {
         factory.setHost(hostname);
@@ -90,7 +90,7 @@ public class QueueBuilder {
     /**
      * Set the target port.
      * @param port the default port to use for connections.
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder setPort(int port) {
         factory.setPort(port);
@@ -100,7 +100,7 @@ public class QueueBuilder {
     /**
      * Set the user name.
      * @param username the AMQP user name to use when connecting to the broker.
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder setUsername(String username) {
         factory.setUsername(username);
@@ -109,7 +109,7 @@ public class QueueBuilder {
 
     /**
      * @param password the password to use when connecting to the broker.
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder setPassword(String password) {
         factory.setPassword(password);
@@ -118,7 +118,7 @@ public class QueueBuilder {
 
     /**
      * @param messageHandler the default messageHandler for messageHandler queue.
-     * @return this QueueBuilder object.
+     * @return QueueBuilder object.
      */
     public QueueBuilder handeMessage(Message messageHandler) {
         this.messageHandler = messageHandler;

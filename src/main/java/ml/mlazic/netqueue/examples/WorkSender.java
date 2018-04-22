@@ -4,10 +4,16 @@ import ml.mlazic.netqueue.NetQueue;
 import ml.mlazic.netqueue.builders.QueueBuilder;
 import ml.mlazic.netqueue.queues.QueueType;
 
+/**
+ * WorkSender.java
+ * Purpose: Example of work sender
+ *
+ * @author Marko Lazic
+ * @version 1.0 4/21/18
+ */
 public class WorkSender {
 
     public static void main(String[] args) {
-
         QueueBuilder builder = new QueueBuilder();
         builder.setQueueName("hello.work")
                 .setType(QueueType.WORK);
