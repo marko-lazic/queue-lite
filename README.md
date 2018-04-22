@@ -56,7 +56,8 @@ QueueBuilder builder = new QueueBuilder();
                 .setPassword("guest")
                 .setQueueName("postman.queue")
                 .setType(QueueType.POSTMAN)
-                .handeMessage((message) -> { System.out.println(" [x] Received '" + message + "'"); });
+                .handeMessage((message) 
+                -> { System.out.println(" [x] Received '" + message + "'"); });
 
         NetQueue queue = new NetQueue(builder);
 

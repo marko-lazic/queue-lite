@@ -22,7 +22,6 @@ public class PostmanReceiver {
         queue.receive();
 
         queue.close();
-
     }
 
 }
