@@ -30,7 +30,7 @@ All Example code is available at:
 
 `/src/main/java/ml/mlazic/netqueue/examples/PostmanSender.java`
 
-```
+```java
 QueueBuilder builder = new QueueBuilder();
         builder.setHost("localhost")
                 .setPort(5672)
@@ -48,7 +48,7 @@ QueueBuilder builder = new QueueBuilder();
 
 `/src/main/java/ml/mlazic/netqueue/examples/PostmanReceiver.java`
 
-```
+```java
 QueueBuilder builder = new QueueBuilder();
         builder.setHost("localhost")
                 .setPort(5672)
