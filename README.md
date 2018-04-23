@@ -18,17 +18,17 @@ The project requires Maven 3. Some example commands follow:
 
 After building the module, binary distribution assembliy can be found at:
 
-`target/net-queue-1.0-SNAPSHOT.jar`
+`net-queue-client/target/net-queue-1.0-SNAPSHOT.jar`
 
 ## Examples
 
 All Example code is available at:
 
-`/src/main/java/ml/mlazic/netqueue/examples`
+`net-queue-examples/src/main/java/ml/mlazic/netqueue/examples`
 
 ### One-to-one Postman example
 
-`/src/main/java/ml/mlazic/netqueue/examples/PostmanSender.java`
+`net-queue-examples/src/main/java/ml/mlazic/netqueue/examples/PostmanSender.java`
 
 ```java
 QueueBuilder builder = new QueueBuilder();
@@ -46,7 +46,7 @@ QueueBuilder builder = new QueueBuilder();
         queue.close();
 ```
 
-`/src/main/java/ml/mlazic/netqueue/examples/PostmanReceiver.java`
+`net-queue-examples/src/main/java/ml/mlazic/netqueue/examples/PostmanReceiver.java`
 
 ```java
 QueueBuilder builder = new QueueBuilder();
