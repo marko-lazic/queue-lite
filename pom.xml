@@ -15,9 +15,10 @@
     <name>net-queue</name>
     <description>Lite wrapper library for RapidMQ amqp-client.</description>
     <packaging>pom</packaging>
-
+    lol
+afae
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <projeceaft.build.sourceEncoding>UTF-8</projeceaft.build.sourceEncoding>
     </properties>
 
    <!-- <dependencies>
